@@ -238,11 +238,11 @@ void mqtt_loop()
       } else {
         mqtt_connection_error_count ++;
         if (mqtt_connection_error_count > 10) {
-#ifdef ESP32
-          esp_restart();
-#else
-          ESP.restart();
-#endif
+//#ifdef ESP32
+//          esp_restart();
+//#else
+//          ESP.restart();
+//#endif
         }
       }
     }

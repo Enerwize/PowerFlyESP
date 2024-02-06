@@ -1,4 +1,4 @@
-name: PlatformIO CI
+name: PoerFlyESP firmware build
 
 on: [push]
 
@@ -22,3 +22,9 @@ jobs:
 
       - name: Build PlatformIO Project
         run: pio run
+
+      - name: Archive
+        uses: actions/upload-artifact@v2
+        with:
+          name: firmware
+          path: .pio/build/*/firmware.bin
